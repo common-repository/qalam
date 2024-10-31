@@ -1,0 +1,297 @@
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
+  src: URL('../fonts/Tajawal-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 300;
+  src: URL('../fonts/Tajawal-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  src: URL('../fonts/Tajawal-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 900;
+  src: URL('../fonts/Tajawal-ExtraBold.woff') format('woff');
+}
+
+qalam-wrapper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+qalam-extension {
+  position: absolute;
+  pointer-events: none;
+  direction: ltr;
+  z-index: 998;
+}
+qalam-extension qalam-extension-cont {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  direction: ltr;
+  overflow: hidden;
+}
+qalam-extension qalam-extension-cont .qalam-highlights-cont {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+qalam-extension qalam-extension-cont .qalam-highlights-cont qalam-label {
+  position: absolute;
+  cursor: pointer;
+  pointer-events: all;
+  overflow: hidden;
+}
+qalam-extension qalam-extension-cont .qalam-highlights-cont qalam-label.active {
+  pointer-events: none;
+  background-color: #ff000014;
+}
+qalam-extension
+  qalam-extension-cont
+  .qalam-highlights-cont
+  qalam-label
+  label-border {
+  position: absolute;
+  height: 1.5px;
+  background-color: #ec2240;
+  transition: all 0.5s ease-in;
+  bottom: 0;
+}
+qalam-tashkeel-blk,
+qalam-quraan-blk {
+  cursor: pointer !important;
+  pointer-events: all !important;
+  display: flex;
+  position: absolute !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-around !important;
+  bottom: 7px !important;
+  left: 60px;
+  border-radius: 20px !important;
+  width: 25px !important;
+  height: 25px !important;
+  background: #d9d2d2 !important;
+}
+qalam-quraan-blk {
+  left: 90px;
+}
+qalam-tashkeel-blk:hover {
+  background: #d9d2d2;
+}
+.qalam-tashkeel-icon {
+  width: 25px !important;
+  height: 25px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 20px !important;
+  background: rgb(217, 210, 210) !important;
+  cursor: pointer !important;
+}
+.qalam-quraan-icon {
+  width: 17px !important;
+  height: 17px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 20px !important;
+  background: rgb(217, 210, 210) !important;
+  cursor: pointer !important;
+}
+
+.qalam-icons-loader {
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid #008677; /* Blue */
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation: spin 2s linear infinite;
+  position: absolute;
+}
+
+.disabled-tashkeel-tawtheeq {
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+  pointer-events: none !important;
+}
+qalam-wrapper qalam-button-cont {
+  height: 26px !important;
+  direction: ltr;
+  position: absolute;
+  cursor: pointer;
+  pointer-events: all;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+qalam-wrapper qalam-button-cont:hover,
+qalam-wrapper qalam-button-cont.active {
+  height: 26px !important;
+  width: 70px !important;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+}
+qalam-wrapper qalam-button-cont:hover .separator,
+qalam-wrapper qalam-button-cont:hover .disable-icon,
+qalam-wrapper qalam-button-cont.active .separator,
+qalam-wrapper qalam-button-cont.active .disable-icon {
+  display: block;
+}
+qalam-wrapper qalam-button-cont .qalam-button {
+  width: 24px;
+  height: 24px;
+  background-size: 100%;
+  margin-left: 3px;
+  border-radius: 20px;
+  background-color: #30827e;
+  display: flex;
+  align-items: center;
+}
+qalam-wrapper qalam-button-cont .qalam-button .errors {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0;
+  text-align: center;
+  display: none;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  font-family: Tajawal, sans-serif !important;
+}
+qalam-wrapper qalam-button-cont:hover .qalam-button,
+qalam-wrapper qalam-button-cont.active .qalam-button {
+  margin-left: 0;
+}
+qalam-wrapper qalam-button-cont .separator {
+  height: 20px;
+  width: 1px;
+  border: 1px solid #000;
+  opacity: 0.4;
+  display: none;
+  box-sizing: border-box;
+}
+qalam-wrapper qalam-button-cont .disable-icon {
+  display: none;
+}
+qalam-notification {
+  position: fixed;
+  top: 16px;
+  right: -450px;
+  -webkit-transition: all 750ms ease-in-out;
+  -moz-transition: all 750ms ease-in-out;
+  -o-transition: all 750ms ease-in-out;
+  -ms-transition: all 750ms ease-in-out;
+  transition: all 750ms ease-in-out;
+  width: 412px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 2147483647;
+  padding: 24px 32px;
+  font-family: Tajawal, sans-serif !important;
+}
+qalam-notification .notification-inner-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  direction: rtl;
+  justify-content: space-between;
+}
+qalam-notification .notification-inner-cont .notification-close {
+  position: absolute;
+  cursor: pointer;
+  top: 8px;
+  right: 8px;
+}
+qalam-notification .notification-inner-cont .notification-rightside {
+  max-width: 260px;
+}
+qalam-notification .notification-inner-cont .notification-logo {
+  width: 62px;
+  height: 62px;
+}
+qalam-notification
+  .notification-inner-cont
+  .notification-rightside
+  .notification-title {
+  color: #000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 36px;
+  text-align: right;
+  margin: 0 0 6px 0;
+  font-family: Tajawal, sans-serif !important;
+}
+qalam-notification
+  .notification-inner-cont
+  .notification-rightside
+  .notification-desc {
+  opacity: 0.6;
+  color: #000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 28px;
+  text-align: right;
+  margin: 0;
+  font-family: Tajawal, sans-serif !important;
+}
+qalam-notification .notification-inner-cont .notification-rightside button {
+  float: right;
+  width: 66px;
+}
+.qalam-btn {
+  width: 100%;
+  height: 32px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  margin: 16px 0 0 0;
+  padding: 0;
+  outline: none;
+  border-style: solid;
+  cursor: pointer;
+  font-family: Tajawal, sans-serif !important;
+}
+.qalam-btn.secondary-btn {
+  border: 1px solid #30827e;
+  color: #30827e;
+  background-color: #fff;
+}
+.qalam-btn.primary-btn {
+  background-color: #30827e;
+  color: #fff;
+  border-color: #30827e;
+}
+
+qalam-container {
+  display: block !important;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
